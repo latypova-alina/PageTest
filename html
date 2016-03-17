@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <style></style>
+  </head>
+  <body>
+  <div class="header">
+  <h1>Шапка</h1>
+  </div>
+<button>Return the vertical position of the scrollbar</button>
+ <aside class = "menu">
+    
+    
+    
+    
+      <ul id="menu">
+        <li><a href>Мои книги</a></li>
+        <li><a href>Мои друзья</a></li>
+        <li><a href>Мои сообщения</a></li>
+        <li><a href>Мои рецензии</a></li>
+        <li><a href>Мои конкурсы</a></li>
+      </ul>
+    </aside>
+    <div class = "content" id = "content">
+      <h2>Лучшие книги 2015</h2>
+        <ul class = "books">
+   
+          <li>
+            <img src = "http://www.litres.ru/static/bookimages/12/37/19/12371958.bin.dir/12371958.cover_250.jpg" width="150" height="200" >
+            <h3>Харуки Мураками —
+            «Бесцветный Цукуру Тадзаки и его годы странствий»</h3>
+            <p>
+              Главный герой романа — одинокий мужчина, который стремится разобраться в своем непростом прошлом, ради чего он отправляется в путешествие, проходя при этом через различные испытания.
+            </p></li>
+          <li>
+            <img src = "https://i.livelib.ru/boocover/1001250271/o/9ef9/Chak_Palanik__Do_samyh_konchikov.jpeg" width="150" height="200">
+            <h3>Чак Паланик — «До самых кончиков»</h3>
+            <p>
+              На книге стоит пометка «18+» — и не просто так. Автор «Бойцовского клуба» и в этот раз оправдал присвоенное ему прессой звание «короля контркультуры». В романе повествуется о девушке с неудавшейся личной жизнью, которая оказывается в неоднозначных отношениях с извращенным любовником по прозвищу «Паренек для климакса».
+            </p></li>
+          <li>
+            <img src = "https://i.livelib.ru/boocover/1001137237/o/9592/Karlos_Ruis_Safon__Marina.jpeg" width="150" height="200">
+            <h3>Карлос Руис Сафон — «Марина»</h3>
+            <p>
+              Мистический детективный роман «Марина» Руиса Сафона формально считается лучшей работой писателя. Более того, сам автор считает «Марину» своим лучшим произведением. Роман погружает читателя в полную тайн и загадок атмосферу Барселоны конца 70-х. Главный герой — молодой Оскар остается один на один с местной легендой, загадки которой ему и придется разгадать.
+            </p></li>
+          <li>
+            <img src = "http://www.moscowbooks.ru/image/book2/499/big/i499596.jpg" width="150" height="200">
+            <h3>Бернар Вербер — «Третье человечество. Голос Земли»</h3>
+            <p>
+              Одна из книг саги «Третье человечество». Апокалипсис, Гея, богиня Земли, восстает против людей. Эта книга, как и другие романы писателя, не просто художественное произведение. Заставляет задуматься, затрагивает глубокие философские вопросы и дает свои ответы на них.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <button>Return the vertical position of the scrollbar</button>
+      <footer>
+      Футер
+      </footer>
+    
+  
+  <style type="text/css">
+  
+    aside{
+      width: 15%;
+      float: right;
+    }
+ 
+    .header{
+      padding: 0 0 0 10px;
+      margin: 0 0 10px 0;
+      border: 2px solid black;
+     }
+    .header h1{
+      padding: 0 0 0 35px;
+    }
+    .content{
+      padding: 0 10px 0 10px;
+      margin: 0 0 130px 0;
+      width: 85%;
+    }
+    h2{
+      padding: 0 0 0 40px;
+    }
+    #menu{
+      position: fixed;
+    }
+    li {
+      list-style-type: none;
+      padding: 0 0 0 0;
+    }
+    li h3{
+      padding: 10px 0 0 0;
+    }
+    a:hover{
+      background: #FFDEAD;
+      color: #696969;
+    }
+    #menu a {
+      text-decoration: none;
+      display:block; 
+      width:130px;
+      height:30px;
+      font-family: Verdana, Arial, Helvetica, sans-serif; 
+      font-size: 15px;
+      color: black;
+    }
+    .books img{
+      float: left;
+      padding-right: 10px;
+      margin: 10px 0 10px 0;
+    }
+    .books li{
+      clear: both;}
+      footer{
+      text-align: center;
+      padding: 10px;
+      border: 1px solid black;
+    }
+  </style>
+  
+  <script>
+  $(document).ready(function(){
+    $("button").click(function(){
+        alert($(window).height() - $(window).scrollTop());
+        alert($(window).scrollTop());
+        alert($(window).height());
+        alert($('#content')[0].scrollHeight);
+        alert($('#content').height());
+        
+    });
+});
+
+    var hght = 95;   
+    var mrg = 0; 
+   
+    
+
+
+    
+      $(function(){
+   
+        var elem = $('#menu');
+        var top = $(this).scrollTop();
+        
+      $(window).scroll(function(){
+            top = $(this).scrollTop();
+            if (top > 500){
+            elem.hide();
+            }else{
+            elem.show();
+            }
+            
+           if  ($(window).scrollTop() == $(window).height()){
+            elem.hide();
+            }
+          if (top+mrg < hght) {
+            elem.css('top', (hght-top));
+          } else {
+            elem.css('top', mrg);
+           
+           }
+          
+      });
+   
+  });
+
+
+  </script>
+  
+  </body>
+</html>
